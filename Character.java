@@ -1,9 +1,5 @@
-///Nishat Vasker
-
-/// https://www.instagram.com/mdnishat_4056/
-/// East West University 
-///mdnishatkhanchowdhury@gmail.com 
-
+import java.util.Arrays;
+import java.util.Random;
 
 public abstract class Character {
     private String name;
@@ -16,101 +12,131 @@ public abstract class Character {
     private boolean isDead = false;
 
     public Character(String name, int seed) {
-        //implement this constructor using constructor delegation
+        this.name = name;
+        this.level = 1;
+        health = 5;
+        int temp[] = new int[6];
+        for (int i = 0; i < 6; i++)
+            temp[i] = getDiceRollValue(seed);
+        Arrays.sort(temp);
+        strength = temp[0];
+        wisdom = temp[1];
+        dexterity = temp[2];
+        constitution = temp[3];
+        intelligence = temp[4];
+        charisma = temp[5];
     }
 
-    public Character(String name, int level, int strength,
-                     int dexterity, int constitution, int intelligence,
-                     int wisdom, int charisma, int proficiencyMod,
-                     int health, boolean isDead) {
-        //implement this constructor
-        
+    public Character(String name, int level, int strength, int dexterity, int constitution, int intelligence,
+                    int wisdom, int charisma, int proficiencyMod, int health, boolean isDead) {
+        this.name=name;
+        this.level=level;
+        this.strength=strength;
+        this.dexterity=dexterity;
+        this.constitution=constitution;
+        this.intelligence=intelligence;
+        this.wisdom=wisdom;
+        this.charisma=charisma;
+        this.proficiencyMod=proficiencyMod;
+        this.health=health;
+        this.isDead=isDead;
+
+    }
+
+    public int getDiceRollValue(int seed) {
+        // for 4 dice roll
+        int a, b, c, d, min;
+        Random r = new Random(seed);
+        // rolling dice 4 times
+        a = (Math.abs(r.nextInt()) % 6) + 1;
+        b = (Math.abs(r.nextInt()) % 6) + 1;
+        c = (Math.abs(r.nextInt()) % 6) + 1;
+        d = (Math.abs(r.nextInt()) % 6) + 1;
+        min = a;
+        if (min > b)
+            min = b;
+        if (min > c)
+            min = c;
+        if (min > d)
+            min = d;
+        // adding all and dropping min
+        return a + b + c + d - min;
     }
 
     public String getName() {
-        //implement this method
-        return null;
+        return name;
     }
 
     public int getLevel() {
-        //implement this method
-        return 0;
+        return level;
     }
 
     public void setLevel(int level) {
-        //implement this method
+        this.level = level;
     }
 
     public int getStrength() {
-        //implement this method
-        return 0;
+        return strength;
     }
 
     public void setStrength(int strength) {
-        //implement this method
+        this.strength = strength;
     }
 
     public int getDexterity() {
-        //implement this method
-        return 0;
+        return dexterity;
     }
 
     public void setDexterity(int dexterity) {
-        //implement this method
-    }
-
-    public int getIntelligence() {
-        //implement this method
-        return 0;
-    }
-
-    public void setIntelligence(int intelligence) {
-        //implement this method
-    }
-
-    public int getWisdom() {
-        //implement this method
-        return 0;
-    }
-
-    public void setWisdom(int wisdom) {
-        //implement this method
+        this.dexterity = dexterity;
     }
 
     public int getConstitution() {
-        //implement this method
-        return 0;
+        return constitution;
     }
 
     public void setConstitution(int constitution) {
-        //implement this method
+        this.constitution = constitution;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public int getWisdom() {
+        return wisdom;
+    }
+
+    public void setWisdom(int wisdom) {
+        this.wisdom = wisdom;
     }
 
     public int getCharisma() {
-        //implement this method
-        return 0;
+        return charisma;
     }
 
     public void setCharisma(int charisma) {
-        //implement this method
+        this.charisma = charisma;
     }
 
     public int getHealth() {
-        //implement this method
-        return 0;
+        return health;
     }
 
     public void setHealth(int health) {
-        //implement this method
+        this.health = health;
     }
 
-    public boolean getIsDead() {
-        //implement this method
-        return false;
+    public boolean isDead() {
+        return isDead;
     }
 
-    public void setIsDead(boolean isDead) {
-        //implement this method
+    public void setDead(boolean isDead) {
+        this.isDead = isDead;
     }
 
     public abstract void levelUp();
@@ -120,4 +146,3 @@ public abstract class Character {
     public abstract String toString();
 
 }
-
