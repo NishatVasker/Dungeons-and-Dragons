@@ -18,7 +18,7 @@ Wizard.java, and Cleric.java. You will need to create the subclasses from scratc
 
 You are given an abstract class Character.java and an interface Race.java. Implement all the missing methods of the abstract class, and the subclasses Fighter.java, Rogue.java, Wizard.java, and Cleric.java. You will need to create the subclasses from scratch.
 
-Character.java
+#Character.java
 
 
  A character has several instance variables relating to the characters abilties. They are:
@@ -80,7 +80,7 @@ You can perform 2(a) by randomly generating a number between 1 and 6 (inclusive)
 Based on your race, your final ability (all or specific ones) will incrase according to Table2. E.g, if your calculated strength is 10 and strengthInc is 3 based on your race, the final strength should be 13.
 
 
-Fighter.java
+#Fighter.java
 
 
  This class should extend Character and implement Race.
@@ -95,7 +95,7 @@ If the character's isDead variable is true, this method should do nothing beside
  a toString() method that returns a string with format "Level (level) fighter named (name) with (strength) strength, (dexterity) dexterity, (constitution) constitution, (intelligence) intelligence, (wisdom) wisdom and (charisma) charisma"
 
 
-Rogue.java
+#Rogue.java
 
 
  This class should extend Character and implement Race.
@@ -114,7 +114,7 @@ character's isDead variable is true, this method should do nothing besides print
 
 
 
-Cleric.java
+#Cleric.java
 
  This class should extend Character and implement Race.
 
@@ -128,7 +128,7 @@ Cleric.java
 
 
 
-Wizard.java
+#Wizard.java
 
 
 
