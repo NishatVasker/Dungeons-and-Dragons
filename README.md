@@ -1,8 +1,13 @@
 # Dungeons-and-Dragons
 
 //Nishat Vasker
+
+//https://www.instagram.com/mdnishat_4056/
+
 //East West University 
+
 //mdnishatkhanchowdhury@gmail.com 
+
 
 
 Given an abstract class Character.java and an interface Race.java. Implement all the missing methods of the abstract class, and the subclasses Fighter.java, Rogue.java,
