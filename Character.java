@@ -1,3 +1,8 @@
+///Nishat Vasker
+/// East West University 
+///mdnishatkhanchowdhury@gmail.com 
+
+
 public abstract class Character {
     private String name;
     private int level;
@@ -17,6 +22,7 @@ public abstract class Character {
                      int wisdom, int charisma, int proficiencyMod,
                      int health, boolean isDead) {
         //implement this constructor
+        
     }
 
     public String getName() {
