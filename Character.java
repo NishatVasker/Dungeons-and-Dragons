@@ -11,21 +11,7 @@ public abstract class Character {
     private int health;
     private boolean isDead = false;
 
-    public Character(String name, int seed) {
-        this.name = name;
-        this.level = 1;
-        health = 5;
-        int temp[] = new int[6];
-        for (int i = 0; i < 6; i++)
-            temp[i] = getDiceRollValue(seed);
-        Arrays.sort(temp);
-        strength = temp[0];
-        wisdom = temp[1];
-        dexterity = temp[2];
-        constitution = temp[3];
-        intelligence = temp[4];
-        charisma = temp[5];
-    }
+   
 
     public Character(String name, int level, int strength, int dexterity, int constitution, int intelligence,
                     int wisdom, int charisma, int proficiencyMod, int health, boolean isDead) {
@@ -43,25 +29,7 @@ public abstract class Character {
 
     }
 
-    public int getDiceRollValue(int seed) {
-        // for 4 dice roll
-        int a, b, c, d, min;
-        Random r = new Random(seed);
-        // rolling dice 4 times
-        a = (Math.abs(r.nextInt()) % 6) + 1;
-        b = (Math.abs(r.nextInt()) % 6) + 1;
-        c = (Math.abs(r.nextInt()) % 6) + 1;
-        d = (Math.abs(r.nextInt()) % 6) + 1;
-        min = a;
-        if (min > b)
-            min = b;
-        if (min > c)
-            min = c;
-        if (min > d)
-            min = d;
-        // adding all and dropping min
-        return a + b + c + d - min;
-    }
+   
 
     public String getName() {
         return name;
